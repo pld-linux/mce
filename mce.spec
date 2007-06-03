@@ -1,5 +1,5 @@
-Summary:	Maemo MCE library
-Summary(pl.UTF-8):	Biblioteka Maemo MCE
+Summary:	Maemo MCE (Mode Control Entity) definitions
+Summary(pl.UTF-8):	Definicje MCE (Mode Control Entity) dla Maemo
 Name:		mce
 Version:	1.5.6
 Release:	1
@@ -11,21 +11,21 @@ URL:		https://maemo.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Maemo MCE library.
+Maemo MCE (Mode Control Entity) definitions.
 
 %description -l pl.UTF-8
-Biblioteka Maemo MCE.
+Definicje MCE (Mode Control Entity) dla Maemo.
 
 %package devel
-Summary:	Headers of Maemo MCE library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Maemo MCE
+Summary:	Maemo MCE (Mode Control Entity) definition headers
+Summary(pl.UTF-8):	Pliki nagłówkowe definiujące MCE (Mode Control Entity) dla Maemo
 Group:		Development/Libraries
 
 %description devel
-Headers of Maemo MCE library.
+Maemo MCE (Mode Control Entity) definition headers.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki Maemo MCE.
+Pliki nagłówkowe definiujące MCE (Mode Control Entity) dla Maemo.
 
 %prep
 %setup -q -n mce-dev-%{version}
@@ -34,8 +34,6 @@ Pliki nagłówkowe biblioteki Maemo MCE.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pkgconfigdir},%{_includedir}/mce}
 
-#%{__make} install \
-#	DESTDIR=$RPM_BUILD_ROOT
 install mce.pc $RPM_BUILD_ROOT%{_pkgconfigdir}
 install include/mce/*.h $RPM_BUILD_ROOT%{_includedir}/mce
 
